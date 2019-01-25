@@ -38,6 +38,13 @@ public class BankAccount {
     //can't refer to object, which means you can't use email and balance instance variables in this method
     //unit testing allows us to see that this specific method is working, and that it is not a problem with an object
     //this is a pure method because it does not change anything
+
+
+    /* Purpose: to determine if an email is in the correct format. There must be at least one character followed by an @ sign
+     * followed by at least one character and a period, and then at least one character after the period
+     * @param the email that will be validated in the form of a String
+     * @return a boolean, true if the email is valid and false if it is not
+     */
     public static boolean isEmailValid(String email){
         if (email.indexOf('@') == -1){
             return false;

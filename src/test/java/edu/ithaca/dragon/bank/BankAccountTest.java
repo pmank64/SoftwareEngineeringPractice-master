@@ -21,13 +21,16 @@ class BankAccountTest {
         assertEquals(100, bankAccount.getBalance());
     }
 
-    //create a javadoc to define a valid email
-    //write more tests, some will pass and other will fail
-    //then commit
     @Test
     void isEmailValidTest(){
         assertTrue(BankAccount.isEmailValid( "a@b.com"));
         assertFalse( BankAccount.isEmailValid(""));
+        assertFalse( BankAccount.isEmailValid("a@.com"));
+        assertFalse( BankAccount.isEmailValid("@l.com"));
+        assertFalse( BankAccount.isEmailValid("a@b."));
+        assertFalse( BankAccount.isEmailValid("ab.com"));
+        assertFalse( BankAccount.isEmailValid("q@abcom"));
+        assertFalse( BankAccount.isEmailValid("abcd"));
     }
 
     //the constructor relies on other methods and code so it is not really a perfect unit test
