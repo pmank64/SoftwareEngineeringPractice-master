@@ -27,11 +27,12 @@ public class BankAccount {
     }
 
     /**
-     * @post reduces the balance by amount if amount is non-negative and smaller than balance
+     * Purpose: subtracts parameter amount from the balance instance variable
+     * @param amount the amount to be subtracted from the instance variable amount
+     * @post reduces the balance by amount, no value will be subtracted if amount is negative and/or smaller than balance
      */
     public void withdraw (double amount)  {
         balance -= amount;
-
     }
 
     //static means you can call the method without the object, or without instantiating
@@ -40,9 +41,10 @@ public class BankAccount {
     //this is a pure method because it does not change anything
 
 
-    /* Purpose: to determine if an email is in the correct format. There must be at least one character followed by an @ sign
+
+    /** Purpose: to determine if an email is in the correct format. There must be at least one character followed by an @ sign
      * followed by at least one character and a period, and then at least one character after the period
-     * @param the email that will be validated in the form of a String
+     * @param email the email that will be validated in the form of a String
      * @return a boolean, true if the email is valid and false if it is not
      */
     public static boolean isEmailValid(String email){
