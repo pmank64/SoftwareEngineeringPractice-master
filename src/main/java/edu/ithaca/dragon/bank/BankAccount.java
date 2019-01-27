@@ -62,4 +62,13 @@ public class BankAccount {
             }
         }
     }
+
+    /**
+     * Purpose: to ensure that a certain value has two decimal places or less and is not negative
+     * @param amount the value to be checked
+     * @return true if amount is valid, or false if it is not
+     */
+    public static boolean isAmountValid(double amount){
+        return false;
+    }
 }

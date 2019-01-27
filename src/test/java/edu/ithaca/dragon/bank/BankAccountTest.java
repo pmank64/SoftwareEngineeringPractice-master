@@ -39,6 +39,19 @@ class BankAccountTest {
         assertFalse( BankAccount.isEmailValid("q@abcom"));
         assertFalse( BankAccount.isEmailValid("abcd"));
     }
+    @Test
+    void isAmountValidTest(){
+        assertTrue(BankAccount.isAmountValid(100));
+        assertTrue(BankAccount.isAmountValid(0.01));
+        assertTrue(BankAccount.isAmountValid(5000));
+        assertTrue(BankAccount.isAmountValid(0));
+
+        assertFalse( BankAccount.isAmountValid(-0.01));
+        assertFalse( BankAccount.isAmountValid(-10));
+        assertFalse( BankAccount.isAmountValid(-50000));
+        assertFalse( BankAccount.isAmountValid(0.001));
+        assertFalse( BankAccount.isAmountValid(10.24322));
+    }
 
     //the constructor relies on other methods and code so it is not really a perfect unit test
     @Test
