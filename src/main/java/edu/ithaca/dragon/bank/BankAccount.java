@@ -32,7 +32,9 @@ public class BankAccount {
      * @post reduces the balance by amount, no value will be subtracted if amount is negative and/or smaller than balance
      */
     public void withdraw (double amount)  {
-        balance -= amount;
+        if (amount <= balance && amount > 0){
+            balance -= amount;
+        }
     }
 
     //static means you can call the method without the object, or without instantiating
