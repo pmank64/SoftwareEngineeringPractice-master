@@ -69,6 +69,19 @@ public class BankAccount {
      * @return true if amount is valid, or false if it is not
      */
     public static boolean isAmountValid(double amount){
-        return false;
+        if (amount < 0){
+            return false;
+        }
+        else{
+            String stringVal = String.valueOf(amount);
+            int indexof = stringVal.indexOf(".");
+
+            if (stringVal.length()>indexof+3){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
     }
 }
