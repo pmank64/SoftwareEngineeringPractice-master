@@ -29,13 +29,13 @@ class BankAccountTest {
 
         BankAccount bankAccount2 = new BankAccount("a@b.com", 1000);
         bankAccount2.withdraw(-10.12);
-        assertEquals(1000, bankAccount.getBalance());
+        assertEquals(1000, bankAccount2.getBalance());
         bankAccount2.withdraw(-10.01);
-        assertEquals(1000, bankAccount.getBalance());
+        assertEquals(1000, bankAccount2.getBalance());
         bankAccount2.withdraw(10.001);
-        assertEquals(1000, bankAccount.getBalance());
+        assertEquals(1000, bankAccount2.getBalance());
         bankAccount2.withdraw(50.324322);
-        assertEquals(1000, bankAccount.getBalance());
+        assertEquals(1000, bankAccount2.getBalance());
     }
 
     @Test
@@ -77,7 +77,6 @@ class BankAccountTest {
         assertThrows(IllegalArgumentException.class, ()-> new BankAccount("a@b.com", -100));
         assertThrows(IllegalArgumentException.class, ()-> new BankAccount("a@b.com", -100.17));
         assertThrows(IllegalArgumentException.class, ()-> new BankAccount("a@b.com", -0.01));
-
 
         //check for numbers with more than 2 decimal places
         assertThrows(IllegalArgumentException.class, ()-> new BankAccount("a@b.com", 100.001));
